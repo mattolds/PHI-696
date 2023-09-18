@@ -78,15 +78,23 @@ CONTINGENT
   (b) (A→(B∨C))∨(C→¬A)
   (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
   ```
-(a)
-(A ∨ C) ∧ (¬B ∨ C)
 
-(b)
-A ∨ ¬A 
-TAUTOLOGY
+(a)  
+(A → B) → C    
+<-> ¬(¬A ∨ B) ∨ C  
+<-> (A ∧ ¬B) ∨ C  
+<-> (A ∨ C) ∧ (¬B ∨ C)  
 
-(c)
-A ∨ ¬A
+(b)  
+(A → (B ∨ C)) ∨ (C → ¬A)  
+<-> (¬A ∨ (B ∨ C)) ∨ (¬C ∨ ¬A)  
+<-> (¬A ∨ B ∨ C ∨ ¬C ∨ ¬A)  
+<-> C ∨ ¬C    
+TAUTOLOGY  
+
+(c)  
+(¬A ∧ ¬B ∧ C) ∨ (¬A ∧ ¬C) ∨ (B ∧ C) ∨ A  
+<-> A ∨ ¬A  
 TAUTOLOGY
 
 
@@ -99,15 +107,17 @@ TAUTOLOGY
   (d)  O(x) that says that x is an only child  
   (e)  T(x) that says that x has exactly two brothers 
   ```
-(a) B(x, y) := ¬F(x) ∧ ∃z (P(z, x) ∧ P(z, y) ∧ ¬(x = y) ∧ ¬(z = x) ¬(z = y))
 
-(b) A(x,y) := F(x) ∧ ∃z ∃w ((P(z, y) ∧ (P(w, z) ∧ P(w, x) ∧ ¬(z = w) ∧ ¬(z = y) ∧ ¬(z = x) ∧ ¬(y = x))
+(a) B(x, y) := ¬F(x) ∧ ∃z (P(z, x) ∧ P(z, y) ∧ ¬(x = y) ∧ ¬(z = x) ¬(z = y))  
 
-(c) C(x,y) := ¬(x = y) ∧ ∃u ∃v (P(u, x) ∧ ¬(u = x) ∧ P(v, y) ∧ ¬(v = y) ∧ 
+(b) A(x,y) := F(x) ∧ ∃z ∃w ((P(z, y) ∧ (P(w, z) ∧ P(w, x) ∧ ¬(z = w) ∧ ¬(z = y) ∧ ¬(z = x) ∧ ¬(y = x))  
 
-(d) O(x) := ∀y (P(y, x) → ∀z (P(y, z)) → (z = x)))
+(c) C(x,y) := ¬(x = y) ∧ ∃u ∃v ∃z (P(u, x) ∧ P(v, y) ∧ ¬P(v, x) ∧ ¬P(u, y) ∧ P(z, u) ∧ P(z, v) ∧ ¬(u = v) ∧ ¬(u = x) ∧ ¬(u = y) ∧ ¬(v = x) ∧ ¬(v = y) ∧ ¬(z = x) ∧ ¬(z = y) ∧ ¬(z = u) ∧ ¬(z = v))  
+(z is the parent of u and v, who are the respective parents of the cousins x and y.)  
 
-(e) T(x) := ∃y ∃z (B(y, x) ∧ B(z, x) ∧ ¬(y = z) ∧ ¬(y = x) ¬(z = x)) ∧ ∀w (B(w, x) → ((w = y) ∨ (w = z)))
+(d) O(x) := ∀y (P(y, x) → ∀z (P(y, z) → (z = x)))  
+
+(e) T(x) := ∃y ∃z (B(y, x) ∧ B(z, x) ∧ ¬(y = z) ∧ ¬(y = x) ¬(z = x)) ∧ ∀w (B(w, x) → ((w = y) ∨ (w = z)))  
 
 
 4. Let V be a vocabulary of the attribute (concept) language with complements (ALC) consisting of a role name "parent_of" and a concept name "Male". Interpret parent_of as "x is a parent of y" and M as "x is male". Where possible define the following formulas in this vocabulary; where not possible, explain why: 
