@@ -92,11 +92,11 @@ TAUTOLOGY
   (d)  O(x) that says that x is an only child  
   (e)  T(x) that says that x has exactly two brothers 
   ```
-(a) B(x, y) := ¬F(x) ∧ ∃z(P(z, x) ∧ P(z, y) ∧ ¬(x = y) ∧ ¬(z = x))
+(a) B(x, y) := ¬F(x) ∧ ∃z (P(z, x) ∧ P(z, y) ∧ ¬(x = y) ∧ ¬(z = x) ¬(z = y))
 
-(b) A(x,y) := F(x) ∧ ∃z∃w((P(z, y) ∧ (P(w, z) ∧ P(w, x) ∧ ¬(z = w) ∧ ¬(z = y) ∧ ¬(z = x) ∧ ¬(y = x))
+(b) A(x,y) := F(x) ∧ ∃z ∃w ((P(z, y) ∧ (P(w, z) ∧ P(w, x) ∧ ¬(z = w) ∧ ¬(z = y) ∧ ¬(z = x) ∧ ¬(y = x))
 
-(c) C(x,y) := ¬(x = y) ∧ ∃u∃v(P(u, x) ∧ ¬(u = x) ∧ P(v, y) ∧ ¬(v = y) ∧ 
+(c) C(x,y) := ¬(x = y) ∧ ∃u ∃v (P(u, x) ∧ ¬(u = x) ∧ P(v, y) ∧ ¬(v = y) ∧ 
 
 (d) O(x) := ∀y (P(y, x) → ∀z (P(y, z)) → (z = x)))
 
