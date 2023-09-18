@@ -31,7 +31,7 @@ T	T	F	T
 T	T	T	T  
 TAUTOLOGY  
 
-(b)
+(b)  
 A	B	((A → B) ∧ (A → ¬B))  
 F	F	T  
 F	T	T  
@@ -39,7 +39,7 @@ T	F	F
 T	T	F  
 CONTINGENT  
 
-(c)
+(c)  
 A	B	C	((A → (B ∨ C)) ∨ (C → ¬A))  
 F	F	F	T  
 F	F	T	T  
@@ -51,7 +51,7 @@ T	T	F	T
 T	T	T	T  
 TAUTOLOGY  
 
-(d)
+(d)  
 A	B	C	D	(((A → B) ∧ C) ∨ (A ∧ D))  
 F	F	F	F	F  
 F	F	F	T	F  
