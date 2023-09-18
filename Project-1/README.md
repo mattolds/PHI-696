@@ -20,7 +20,7 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   ```
 
 (a)
-A	B	C	((¬A → B) ∨ ((A ∧ ¬C) → B))
+A	B	C	((¬A → B) ∨ ((A ∧ ¬C) → B))    Tautology
 F	F	F	T
 F	F	T	T
 F	T	F	T
@@ -30,13 +30,13 @@ T	F	T	T
 T	T	F	T
 T	T	T	T
 (b)
-A	B	((A → B) ∧ (A → ¬B))
+A	B	((A → B) ∧ (A → ¬B))  CONTINGENT
 F	F	T
 F	T	T
 T	F	F
 T	T	F
 (c)
-A	B	C	((A → (B ∨ C)) ∨ (C → ¬A))
+A	B	C	((A → (B ∨ C)) ∨ (C → ¬A))  TUTOLOGY
 F	F	F	T
 F	F	T	T
 F	T	F	T
@@ -46,7 +46,7 @@ T	F	T	T
 T	T	F	T
 T	T	T	T
 (d)
-A	B	C	D	(((A → B) ∧ C) ∨ (A ∧ D))
+A	B	C	D	(((A → B) ∧ C) ∨ (A ∧ D))  CONTINGENT
 F	F	F	F	F
 F	F	F	T	F
 F	F	T	F	T
@@ -72,13 +72,17 @@ T	T	T	T	T
   (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
   ```
 (a)
+(A ∨ C) ∧ (¬B ∨ C)
 
 (b)
+A ∨ ¬A 
+TAUTOLOGY
 
 (c)
+A ∨ ¬A
+TAUTOLOGY
 
 
-  
 3. Let V be the vocabulary of first-order logic consisting of a binary relation P and a unary relation F. Interpret P(x,y) as “x is a parent of y” and F(x) as “x is female.” Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   
   ```
@@ -88,6 +92,16 @@ T	T	T	T	T
   (d)  O(x) that says that x is an only child  
   (e)  T(x) that says that x has exactly two brothers 
   ```
+(a) B(x, y) := ¬F(x) ∧ ∃z(P(z, x) ∧ P(z, y) ∧ ¬(x = y) ∧ ¬(z = x))
+
+(b) A(x,y) := F(x) ∧ ∃z∃w((P(z, y) ∧ (P(w, z) ∧ P(w, x) ∧ ¬(z = w) ∧ ¬(z = y) ∧ ¬(z = x) ∧ ¬(y = x))
+
+(c) C(x,y) := ¬(x = y) ∧ ∃u∃v(P(u, x) ∧ ¬(u = x) ∧ P(v, y) ∧ ¬(v = y) ∧ 
+
+(d) O(x) := ∀y (P(y, x) → ∀z (P(y, z)) → (z = x)))
+
+(e) T(x) := ∃y ∃z (B(y, x) ∧ B(z, x) ∧ ¬(y = z) ∧ ¬(y = x) ¬(z = x)) ∧ ∀w (B(w, x) → ((w = y) ∨ (w = z)))
+
 
 4. Let V be a vocabulary of the attribute (concept) language with complements (ALC) consisting of a role name "parent_of" and a concept name "Male". Interpret parent_of as "x is a parent of y" and M as "x is male". Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   ```
