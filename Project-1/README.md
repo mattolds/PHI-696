@@ -19,16 +19,18 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   (d) ((A→B)∧C)∨(A∧D) 
   ```
 
-(a)
-A	B	C	((¬A → B) ∨ ((A ∧ ¬C) → B))    Tautology
-F	F	F	T
-F	F	T	T
-F	T	F	T
-F	T	T	T
-T	F	F	T
-T	F	T	T
-T	T	F	T
-T	T	T	T
+(a)  
+A	B	C	((¬A → B) ∨ ((A ∧ ¬C) → B))  
+F	F	F	T  
+F	F	T	T  
+F	T	F	T  
+F	T	T	T  
+T	F	F	T  
+T	F	T	T  
+T	T	F	T  
+T	T	T	T  
+Tautology  
+
 (b)
 A	B	((A → B) ∧ (A → ¬B))  CONTINGENT
 F	F	T
