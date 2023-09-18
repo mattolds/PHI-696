@@ -18,13 +18,66 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   (c) (A→(B∨C))∨(C→¬A) 
   (d) ((A→B)∧C)∨(A∧D) 
   ```
-	
+
+(a)
+A	B	C	((¬A → B) ∨ ((A ∧ ¬C) → B))
+F	F	F	T
+F	F	T	T
+F	T	F	T
+F	T	T	T
+T	F	F	T
+T	F	T	T
+T	T	F	T
+T	T	T	T
+(b)
+A	B	((A → B) ∧ (A → ¬B))
+F	F	T
+F	T	T
+T	F	F
+T	T	F
+(c)
+A	B	C	((A → (B ∨ C)) ∨ (C → ¬A))
+F	F	F	T
+F	F	T	T
+F	T	F	T
+F	T	T	T
+T	F	F	T
+T	F	T	T
+T	T	F	T
+T	T	T	T
+(d)
+A	B	C	D	(((A → B) ∧ C) ∨ (A ∧ D))
+F	F	F	F	F
+F	F	F	T	F
+F	F	T	F	T
+F	F	T	T	T
+F	T	F	F	F
+F	T	F	T	F
+F	T	T	F	T
+F	T	T	T	T
+T	F	F	F	F
+T	F	F	T	T
+T	F	T	F	F
+T	F	T	T	T
+T	T	F	F	F
+T	T	F	T	T
+T	T	T	F	T
+T	T	T	T	T
+
+ 
 2. A _literal_ is an atomic formula or the negation of an atomic formula. We say a formula is in _conjunctive normal form_ (CNF) if it is the conjunction of the disjunction of literals. Find propositional logic formulas in CNF equivalent to each of the following:
   ```
   (a) (A→B)→C
   (b) (A→(B∨C))∨(C→¬A)
   (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
   ```
+(a)
+
+(b)
+
+(c)
+
+
   
 3. Let V be the vocabulary of first-order logic consisting of a binary relation P and a unary relation F. Interpret P(x,y) as “x is a parent of y” and F(x) as “x is female.” Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   
