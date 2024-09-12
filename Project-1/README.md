@@ -18,14 +18,86 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   (c) (A→(B∨C))∨(C→¬A) 
   (d) ((A→B)∧C)∨(A∧D) 
   ```
-	
+
+(a)  
+A	B	C	((¬A → B) ∨ ((A ∧ ¬C) → B))  
+F	F	F	T  
+F	F	T	T  
+F	T	F	T  
+F	T	T	T  
+T	F	F	T  
+T	F	T	T  
+T	T	F	T  
+T	T	T	T  
+TAUTOLOGY  
+
+(b)  
+A	B	((A → B) ∧ (A → ¬B))  
+F	F	T  
+F	T	T  
+T	F	F  
+T	T	F  
+CONTINGENT  
+
+(c)  
+A	B	C	((A → (B ∨ C)) ∨ (C → ¬A))  
+F	F	F	T  
+F	F	T	T  
+F	T	F	T  
+F	T	T	T  
+T	F	F	T  
+T	F	T	T  
+T	T	F	T  
+T	T	T	T  
+TAUTOLOGY  
+
+(d)  
+A	B	C	D	(((A → B) ∧ C) ∨ (A ∧ D))  
+F	F	F	F	F  
+F	F	F	T	F  
+F	F	T	F	T  
+F	F	T	T	T  
+F	T	F	F	F  
+F	T	F	T	F  
+F	T	T	F	T  
+F	T	T	T	T  
+T	F	F	F	F  
+T	F	F	T	T  
+T	F	T	F	F  
+T	F	T	T	T  
+T	T	F	F	F  
+T	T	F	T	T  
+T	T	T	F	T  
+T	T	T	T	T  
+CONTINGENT  
+
+ 
 2. A _literal_ is an atomic formula or the negation of an atomic formula. We say a formula is in _conjunctive normal form_ (CNF) if it is the conjunction of the disjunction of literals. Find propositional logic formulas in CNF equivalent to each of the following:
   ```
   (a) (A→B)→C
   (b) (A→(B∨C))∨(C→¬A)
   (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
   ```
-  
+
+(a)  
+(A → B) → C    
+<-> ¬(¬A ∨ B) ∨ C  
+<-> (A ∧ ¬B) ∨ C  
+<-> (A ∨ C) ∧ (¬B ∨ C)  
+
+(b)  
+(A → (B ∨ C)) ∨ (C → ¬A)  
+<-> (¬A ∨ (B ∨ C)) ∨ (¬C ∨ ¬A)  
+<-> (¬A ∨ B ∨ C ∨ ¬C ∨ ¬A)  
+<-> C ∨ ¬C    
+TAUTOLOGY  
+
+(c)  
+(¬A ∧ ¬B ∧ C) ∨ (¬A ∧ ¬C) ∨ (B ∧ C) ∨ A  
+<-> A ∨ ¬A  
+TAUTOLOGY
+
+
 3. Let V be the vocabulary of first-order logic consisting of a binary relation P and a unary relation F. Interpret P(x,y) as “x is a parent of y” and F(x) as “x is female.” Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   
   ```
@@ -35,6 +107,18 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   (d)  O(x) that says that x is an only child  
   (e)  T(x) that says that x has exactly two brothers 
   ```
+
+(a) B(x, y) := ¬F(x) ∧ ∃z (P(z, x) ∧ P(z, y) ∧ ¬(x = y) ∧ ¬(z = x) ¬(z = y))  
+
+(b) A(x,y) := F(x) ∧ ∃z ∃w ((P(z, y) ∧ (P(w, z) ∧ P(w, x) ∧ ¬(z = w) ∧ ¬(z = y) ∧ ¬(z = x) ∧ ¬(y = x))  
+
+(c) C(x,y) := ¬(x = y) ∧ ∃u ∃v ∃z (P(u, x) ∧ P(v, y) ∧ ¬P(v, x) ∧ ¬P(u, y) ∧ P(z, u) ∧ P(z, v) ∧ ¬(u = v) ∧ ¬(u = x) ∧ ¬(u = y) ∧ ¬(v = x) ∧ ¬(v = y) ∧ ¬(z = x) ∧ ¬(z = y) ∧ ¬(z = u) ∧ ¬(z = v))  
+(z is the parent of u and v, who are the respective parents of the cousins x and y.)  
+
+(d) O(x) := ∀y (P(y, x) → ∀z (P(y, z) → (z = x)))  
+
+(e) T(x) := ∃y ∃z (B(y, x) ∧ B(z, x) ∧ ¬(y = z) ∧ ¬(y = x) ¬(z = x)) ∧ ∀w (B(w, x) → ((w = y) ∨ (w = z)))  
+
 
 4. Let V be a vocabulary of the attribute (concept) language with complements (ALC) consisting of a role name "parent_of" and a concept name "Male". Interpret parent_of as "x is a parent of y" and M as "x is male". Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   ```
